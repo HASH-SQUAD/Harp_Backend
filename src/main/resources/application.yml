@@ -1,0 +1,38 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/harp
+    username: ${USERNAME}
+    password: ${PASSWORD}
+
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+jwt:
+  header: ${HEADER}
+  secret: ${SECRET}
+  accessExp: ${ACCESS-EXP}
+  refreshExp: ${REFRESH-EXP}
+  prefix: ${PREFIX}
+
+oauth2:
+  client:
+    registration:
+      google:
+        client-id: ${GOOGLE_CLIENT_ID}
+        client-secret: ${GOOGLE_SECRET_KEY}
+        redirect-uri: ${GOOGLE_REDIRECT_URL}
+        scope:
+          - profile
+          - email
