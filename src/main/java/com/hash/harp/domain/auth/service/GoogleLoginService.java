@@ -2,6 +2,7 @@ package com.hash.harp.domain.auth.service;
 
 import com.hash.harp.domain.user.domain.User;
 import com.hash.harp.domain.user.domain.type.Authority;
+import com.hash.harp.domain.user.domain.type.OauthType;
 import com.hash.harp.domain.user.repository.UserRepository;
 import com.hash.harp.global.config.properties.AuthProperties;
 import com.hash.harp.global.feign.GoogleAuthClient;
@@ -54,6 +55,7 @@ public class GoogleLoginService {
                     .username(userInfo.name())
                     .authority(Authority.USER)
                     .isFirst(Boolean.TRUE)
+                    .oauthType(OauthType.GOOGLE)
                     .build());
         }
 
