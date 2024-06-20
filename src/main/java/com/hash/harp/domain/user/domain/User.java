@@ -22,6 +22,8 @@ public class User {
 
     private String address;
 
+    private String birthday;
+
     private Boolean isFirst;
 
     @Enumerated(EnumType.STRING)
